@@ -192,6 +192,154 @@
        </div>
       </div>
 
+      <!-- religion with select  options-->
+      <div class="row mb-3">
+       <label for="religion" class="col-md-4 col-form-label text-md-end">{{ __('Religion') }}</label>
+
+       <div class="col-md-6">
+        <select name="religion" id="" class="form-control">
+         <option value="">Select Religion</option>
+         <!-- App\Models\Religion::ReligionOptions -->
+         @foreach (App\Models\Religion::ReligionOptions() as $religion)
+         <option value="{{ $religion }}">{{ $religion }}</option>
+         @endforeach
+        </select>
+       </div>
+      </div>
+
+      <!-- country  -->
+      <div class="row mb-3">
+       <label for="religion" class="col-md-4 col-form-label text-md-end">{{ __('Country') }}</label>
+
+       <div class="col-md-6">
+        <select name="country" id="" class="form-control">
+         <option value="">Select Country</option>
+         <!-- App\Models\Religion::ReligionOptions -->
+         @foreach (App\Models\Country::CountryOptions() as $country)
+         <option value="{{ $country }}">{{ $country }}</option>
+         @endforeach
+        </select>
+       </div>
+      </div>
+
+      <!-- city -->
+
+      <div class="row mb-3">
+       <label for="religion" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
+
+       <div class="col-md-6">
+        <select name="city" id="" class="form-control">
+         <option value="">Select City</option>
+         <!-- App\Models\Religion::ReligionOptions -->
+         @foreach (App\Models\City::CityOptions() as $city)
+         <option value="{{ $city }}">{{ $city }}</option>
+         @endforeach
+        </select>
+       </div>
+      </div>
+
+      <!-- state -->
+
+      <div class="row mb-3">
+       <label for="religion" class="col-md-4 col-form-label text-md-end">{{ __('State') }}</label>
+
+       <div class="col-md-6">
+        <select name="state" id="" class="form-control">
+         <option value="">Select State</option>
+         <!-- App\Models\Religion::ReligionOptions -->
+         @foreach (App\Models\State::StateOptions() as $state)
+         <option value="{{ $state }}">{{ $state }}</option>
+         @endforeach
+        </select>
+       </div>
+      </div>
+
+      <!-- zip_code -->
+      <div class="row mb-3">
+       <label for="zip_code" class="col-md-4 col-form-label text-md-end">{{ __('Zip Code') }}</label>
+       <div class="col-md-6">
+        <input id="zip_code" type="text" class="form-control @error('zip_code') is-invalid @enderror" name="zip_code"
+         value="{{ old('zip_code') }}" required autocomplete="zip_code" autofocus>
+        @error('zip_code')
+        <span class="invalid-feedback" role="alert">
+         <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+       </div>
+      </div>
+      <!-- contact_address -->
+      <div class="row mb-3">
+       <label for="contact_address" class="col-md-4 col-form-label text-md-end">{{ __('Contact Address') }}</label>
+       <div class="col-md-6">
+        <input id="contact_address" type="text" class="form-control @error('contact_address') is-invalid @enderror"
+         name="contact_address" value="{{ old('contact_address') }}" required autocomplete="contact_address" autofocus>
+        @error('contact_address')
+        <span class="invalid-feedback" role="alert">
+         <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+       </div>
+      </div>
+
+      <!-- permanent_address -->
+      <div class="row mb-3">
+       <label for="permanent_address" class="col-md-4 col-form-label text-md-end">{{ __('Permanent Address') }}</label>
+       <div class="col-md-6">
+        <input id="permanent_address" type="text" class="form-control @error('permanent_address') is-invalid @enderror"
+         name="permanent_address" value="{{ old('permanent_address') }}" required autocomplete="permanent_address"
+         autofocus>
+        @error('permanent_address')
+        <span class="invalid-feedback" role="alert">
+         <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+       </div>
+      </div>
+
+      <!-- business_address -->
+      <div class="row mb-3">
+       <label for="business_address" class="col-md-4 col-form-label text-md-end">{{ __('Business Address') }}</label>
+       <div class="col-md-6">
+        <input id="business_address" type="text" class="form-control @error('business_address') is-invalid @enderror"
+         name="business_address" value="{{ old('business_address') }}" required autocomplete="business_address"
+         autofocus>
+        @error('business_address')
+        <span class="invalid-feedback" role="alert">
+         <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+       </div>
+      </div>
+
+      <!-- status with input tpye hidden -->
+      <div class="row mb-3">
+       <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
+
+       <div class="col-md-6">
+        <input id="status" type="hidden" class="form-control @error('status') is-invalid @enderror" name="status"
+         value="pending" required autocomplete="status" autofocus>
+
+        @error('status')
+        <span class="invalid-feedback" role="alert">
+         <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+       </div>
+      </div>
+      <!-- remark with textarea -->
+      <div class="row mb-3">
+       <label for="remark" class="col-md-4 col-form-label text-md-end">{{ __('Remark') }}</label>
+
+       <div class="col-md-6">
+        <textarea name="remark" id="" cols="30" rows="10" class="form-control"></textarea>
+        @error('remark')
+        <span class="invalid-feedback" role="alert">
+         <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+       </div>
+      </div>
+
 
       <div class="row mb-0">
        <div class="col-md-6 offset-md-4">

@@ -32,7 +32,7 @@ return new class extends Migration
 			$table->string('state')->default('N/A');
 			$table->string('zip_code')->default('N/A');
             $table->string('contact_address')->nullable();
-            $table->string('premanent_address')->default('N/A');
+            $table->string('permanent_address')->default('N/A');
             $table->string('business_address')->default('N/A');
             $table->string('status')->default('pending');
             $table->text('remark')->default('N/A');
