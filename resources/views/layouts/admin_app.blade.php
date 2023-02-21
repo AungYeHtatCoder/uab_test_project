@@ -1,3 +1,4 @@
+<base href="/public">
 @include('layouts.head')
 @yield('styles')
 
