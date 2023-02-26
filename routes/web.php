@@ -32,5 +32,7 @@ Route::name('admin.')->group(function () {
         Route::resource('/roles', App\Http\Controllers\Admin\RoleController::class);
         // user resource routes
         Route::resource('/users', App\Http\Controllers\Admin\UsersController::class);
+        // user pending routes (get method)
+        Route::get('/users-pending', [App\Http\Controllers\Admin\UsersController::class, 'pending'])->name('users.pending');
     });
 });

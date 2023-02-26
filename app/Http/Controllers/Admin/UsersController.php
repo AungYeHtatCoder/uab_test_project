@@ -24,6 +24,14 @@ class UsersController extends Controller
     
     }
 
+    // get all users data with where status is pending
+    public function pending(): Response
+    {
+        $users = User::where('status', 'pending')->orderBy('id', 'desc')->with('roles')->get();
+        return response()->view('admin.users.user_pending_index', compact('users'));
+    }
+   
+
     /**
      * Show the form for creating a new resource.
      */

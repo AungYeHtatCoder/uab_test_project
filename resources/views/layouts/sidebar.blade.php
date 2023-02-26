@@ -18,6 +18,7 @@
      <a class="nav-link" href="{{ route('admin.permissions.index') }}">User Permission</a>
      <a class="nav-link" href="{{ route('admin.roles.index') }}">User Role</a>
      <a class="nav-link" href="{{ route('admin.users.index') }}">User List</a>
+     <a class="nav-link" href="{{ route('admin.users.pending') }}">User pending List</a>
     </nav>
    </div>
    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
