@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -43,3 +43,12 @@ Route::name('admin.')->group(function () {
         Route::resource('/brands', App\Http\Controllers\Admin\ProductBrandController::class);
     });
 });
+
+// user routes
+Route::name('user.')->group(function () {
+    
+        Route::get('/', [App\Http\Controllers\User\UserProductController::class, 'index'])->name('user-products.index');
+  //  });
+});
+
+Route::get('/search', [App\Http\Controllers\User\UserProductController::class, 'search'])->name('products.search');

@@ -54,7 +54,7 @@
        <span class="shop-title">Products</span>
        <span class="float-right">
         <span class="result-text mr-1">
-         Showing {{ count($products) }} of {{ count($products_all) }} results</span>
+         Showing of results</span>
         <span class="display-buttons">
          <a href="#" class="active"><i class="ft-grid font-medium-2"></i></a>
          <a href="#"><i class="ft-list font-medium-2"></i></a>
@@ -63,6 +63,7 @@
       </div>
      </div>
      <div class="row match-height">
+      @if(!empty($products))
       @foreach($products as $product)
       <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
        <div class="card pull-up">
@@ -102,6 +103,17 @@
       </div>
 
       @endforeach
+      @else
+      <div class="col-12">
+       <div class="card">
+        <div class="card-content">
+         <div class="card-body">
+          <h4 class="text-center">No Products Found</h4>
+         </div>
+        </div>
+       </div>
+      </div>
+      @endif
 
       <div class="col-12">
        <div class="card">
@@ -113,7 +125,9 @@
             <span class="sr-only">Previous</span>
            </a>
           </li>
-          {!! $products->links() !!}
+          <li class="page-item active">
+           <a class="page-link" href="{{ route('user.user-products.index') }}">Bact To Shop</a>
+          </li>
 
           <li class="page-item">
            <a class="page-link" href="#" aria-label="Next">
@@ -153,28 +167,37 @@
         </div>
         <div class="product-cat" id="categories">
          <ul class="treeview">
-          @if($categories)
+          @if(!empty($categories))
           @foreach($categories as $category)
           <li>
            <span>{{ $category->category_name }}</span>
            <ul>
-            <!-- category with brands -->
-            @if($category->brands)
-            @foreach($category->brands as $brand)
             <li>
              <span>
-              <a href="">{{ $brand->brand_name }}</a>
+              <!-- brand loop -->
+              @if(!empty($brands))
+              @foreach($brands as $brand)
+              {{ $brand->brand_name }}
+              @endforeach
+              @else
+              No Brands Found
+              @endif
+
              </span>
             </li>
-            @endforeach
-            @endif
-
+            <li>
+             <span>Fitbit</span>
+            </li>
            </ul>
           </li>
           @endforeach
-          @endif
+          @else
+          <li>
+           <span>No Categories Found</span>
+          </li>
 
-          <!-- <li>
+          @endif
+          <li>
            <span>Tablets</span>
            <ul>
             <li>
@@ -210,7 +233,7 @@
               Pro</span>
             </li>
            </ul>
-          </li> -->
+          </li>
          </ul>
         </div>
        </div>

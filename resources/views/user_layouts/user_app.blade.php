@@ -24,18 +24,7 @@
 
  <!-- END: Main Menu-->
  <!-- BEGIN: Content-->
- <div class="app-content container center-layout mt-2">
-  <div class="content-overlay"></div>
-  <div class="content-wrapper">
-   <div class="content-header row">
-   </div>
-   <div class="content-body">
-    <!-- Dashboard Ecommerce Starts -->
-    @yield('content')
-    <!-- Dashboard Ecommerce ends -->
-   </div>
-  </div>
- </div>
+ @yield('content')
  <!-- END: Content-->
 
  <div class="sidenav-overlay"></div>

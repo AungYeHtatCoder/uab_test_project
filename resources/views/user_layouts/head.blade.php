@@ -40,7 +40,7 @@
  <link rel="stylesheet" type="text/css" href="admin/app-assets/fonts/simple-line-icons/style.css">
  <link rel="stylesheet" type="text/css" href="admin/app-assets/css/core/colors/palette-gradient.css">
  <link rel="stylesheet" type="text/css" href="admin/app-assets/css/pages/timeline.css">
- <link rel="stylesheet" type="text/css" href="admin/app-assets/css/pages/dashboard-ecommerce.css">
+ <!-- <link rel="stylesheet" type="text/css" href="admin/app-assets/css/pages/dashboard-ecommerce.css"> -->
  <!-- END: Page CSS-->
 
  <!-- BEGIN: Custom CSS-->

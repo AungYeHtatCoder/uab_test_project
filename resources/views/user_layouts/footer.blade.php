@@ -27,7 +27,7 @@
 <!-- END: Theme JS-->
 
 <!-- BEGIN: Page JS-->
-<script src="admin/app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+<!-- <script src="admin/app-assets/js/scripts/pages/dashboard-ecommerce.js"></script> -->
 <!-- END: Page JS-->
 
 </body>

@@ -13,8 +13,13 @@ class Category extends Model
         'category_name',
     ];
 
+    // public function products()
+    // {
+    //     return $this->hasMany(Product::class);
+    // }
+
     public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
+{
+    return $this->belongsToMany(Product::class);
+}
 }
