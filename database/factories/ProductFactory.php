@@ -18,11 +18,20 @@ class ProductFactory extends Factory
     {
         return [
             'product_name' => $this->faker->name,
-            'category_id' => $this->faker->randomNumber(),
-            'brand_id' => $this->faker->randomNumber(),
-            'product_price' => $this->faker->word,
-            'product_old_price' => $this->faker->word,
-            'product_quantity' => $this->faker->word,
+            // category_id with random number between 1 and 100
+            'category_id' => $this->faker->numberBetween(1, 100),
+            //'brand_id' => $this->faker->randomNumber(),
+            // brand_id with random number between 1 and 100
+            'brand_id' => $this->faker->numberBetween(1, 100),
+            //'product_price' => $this->faker->word,
+            // product_price with random number between 1 and 100
+            'product_price' => $this->faker->numberBetween(1, 10000),
+            //'product_old_price' => $this->faker->word,
+            // product_old_price with random number between 1 and 100
+            'product_old_price' => $this->faker->numberBetween(1, 10000),
+            //'product_quantity' => $this->faker->word,
+            // product_quantity with random number between 1 and 100
+            'product_quantity' => $this->faker->numberBetween(1, 20),
             'product_description' => $this->faker->text,
             //'product_image' => $this->faker->word,
             // product_image with urlImage

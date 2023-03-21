@@ -52,3 +52,12 @@ Route::name('user.')->group(function () {
 });
 
 Route::get('/search', [App\Http\Controllers\User\UserProductController::class, 'search'])->name('products.search');
+// AddToCartController
+Route::post('/add-to-cart/{id}', [App\Http\Controllers\User\AddToCartController::class, 'store'])->name('add-to-cart.store');
+// index cart
+Route::get('/cart', [App\Http\Controllers\User\AddToCartController::class, 'index'])->name('cart.index');
+// cart destroy
+Route::post('/cart/{id}', [App\Http\Controllers\User\AddToCartController::class, 'destroy'])->name('cart.destroy');
+
+// cart update
+Route::post('/cart-update/{id}', [App\Http\Controllers\User\AddToCartController::class, 'update'])->name('cart.update');

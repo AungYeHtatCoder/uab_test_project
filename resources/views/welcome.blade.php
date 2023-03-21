@@ -37,8 +37,10 @@
      </button>
      <div class="dropdown-menu arrow">
       <a class="dropdown-item" href="#"><i class="fa fa-calendar-check mr-1"></i>
-       Calender</a><a class="dropdown-item" href="#"><i class="fa fa-cart-plus mr-1"></i>
-       Cart</a><a class="dropdown-item" href="#"><i class="fa fa-life-ring mr-1"></i>
+       Calender</a>
+      <a class="dropdown-item" href="{{ route('cart.index') }}"><i class="fa fa-cart-plus mr-1"></i>
+       Cart</a>
+      <a class="dropdown-item" href="#"><i class="fa fa-life-ring mr-1"></i>
        Support</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#"><i class="fa fa-cog mr-1"></i> Settings</a>
@@ -93,8 +95,18 @@
             class="saperator">|</span>
            <a href="#compare" data-toggle="tooltip" data-placement="top" title="Compare"><i
              class="ft-sliders"></i></a><span class="saperator">|</span>
-           <a href="#cart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i
-             class="ft-shopping-cart"></i></a>
+           <!-- <a href="#cart" data-toggle="tooltip" data-placement="top" title="Add To Cart"><i
+             class="ft-shopping-cart"></i></a> -->
+           <!-- add to cart session form -->
+           <form action="{{ route('add-to-cart.store', $product->id) }}" method="post">
+            @csrf
+            <input type="hidden" name="product_id" value="{{ $product->id }}">
+            <input type="hidden" name="product_name" value="{{ $product->product_name }}">
+            <input type="hidden" name="product_price" value="{{ $product->product_price }}">
+            <input type="hidden" name="product_image" value="{{ $product->product_image }}">
+            <input type="hidden" name="product_quantity" value="1">
+            <button type="submit"><i class="ft-shopping-cart"></i></button>
+           </form>
           </div>
          </div>
         </div>
