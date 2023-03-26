@@ -1,0 +1,79 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            data-tab="home-tab"
+            >Address</a
+        >
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-tab="profile-tab">Product</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-tab="messages-tab">OrderCard</a>
+    </li>
+    <li class="nav-item">
+        <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+            data-tab="disabled-tab"
+            >Disabled</a
+        >
+    </li>
+</ul>
+
+<div class="card-deck">
+    <div class="card" id="home-tab">
+        <div class="card-body">
+            <h5 class="card-title">Address Card</h5>
+            <p class="card-text">This is the home card.</p>
+        </div>
+    </div>
+    <div class="card" id="profile-tab">
+        <div class="card-body">
+            <h5 class="card-title">Product Card</h5>
+            <p class="card-text">This is the profile card.</p>
+        </div>
+    </div>
+    <div class="card" id="messages-tab">
+        <div class="card-body">
+            <h5 class="card-title">Order Card</h5>
+            <p class="card-text">This is the messages card.</p>
+        </div>
+    </div>
+</div>
+
+@section('scripts')
+<script>
+    // Get all the anchor tags with data-tab attribute
+    const tabLinks = document.querySelectorAll("[data-tab]");
+
+    // Loop through each anchor tag and add a click event listener
+    tabLinks.forEach((tabLink) => {
+        tabLink.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Get the id of the tab content to display
+            const tabId = tabLink.dataset.tab;
+
+            // Hide all the card elements
+            const cards = document.querySelectorAll(".card");
+            cards.forEach((card) => {
+                card.style.display = "none";
+            });
+
+            // Show the card element with the corresponding id
+            const tabContent = document.getElementById(tabId);
+            tabContent.style.display = "block";
+        });
+    });
+
+    // Display the home tab and card by default
+    document.getElementById("home-tab").click();
+</script>
+
+@endsection

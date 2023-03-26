@@ -41,6 +41,8 @@ Route::name('admin.')->group(function () {
         Route::resource('/products', App\Http\Controllers\Admin\ProductController::class);
         // brands resource routes
         Route::resource('/brands', App\Http\Controllers\Admin\ProductBrandController::class);
+        // orders resource routes
+        Route::resource('/order', App\Http\Controllers\Admin\GetOrderController::class);
     });
 });
 
@@ -55,9 +57,13 @@ Route::get('/search', [App\Http\Controllers\User\UserProductController::class, '
 // AddToCartController
 Route::post('/add-to-cart/{id}', [App\Http\Controllers\User\AddToCartController::class, 'store'])->name('add-to-cart.store');
 // index cart
-Route::get('/cart', [App\Http\Controllers\User\AddToCartController::class, 'index'])->name('cart.index');
+Route::get('/cart', [App\Http\Controllers\User\AddToCartController::class, 'index'])->name('cart.index')->middleware('auth');
 // cart destroy
 Route::post('/cart/{id}', [App\Http\Controllers\User\AddToCartController::class, 'destroy'])->name('cart.destroy');
 
 // cart update
 Route::post('/cart-update/{id}', [App\Http\Controllers\User\AddToCartController::class, 'update'])->name('cart.update');
+
+// order index routes
+Route::get('/orders', [App\Http\Controllers\User\OrderController::class, 'index'])->name('orders.index')->middleware('auth');
+Route::post('/orders', [App\Http\Controllers\User\OrderController::class, 'store'])->name('orders.store');

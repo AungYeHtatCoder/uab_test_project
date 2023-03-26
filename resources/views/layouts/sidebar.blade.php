@@ -50,7 +50,7 @@
       <nav class="sb-sidenav-menu-nested nav">
        <a class="nav-link" href="{{ route('admin.products.index') }}">ProductList</a>
        <a class="nav-link" href="{{ route('admin.brands.index') }}">ProductBrand</a>
-       <a class="nav-link" href="500.html">500 Page</a>
+       <a class="nav-link" href="{{ route('admin.order.index') }}">GetOrder</a>
       </nav>
      </div>
     </nav>

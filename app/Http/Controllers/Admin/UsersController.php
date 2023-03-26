@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Permission;
-
+use App\Models\Order;
 class UsersController extends Controller
 {
     /**
@@ -67,7 +67,9 @@ class UsersController extends Controller
         //$user = User::find($id);
         // $roles = Role::all();
         // $permissions = Permission::all();
-        return response()->view('admin.users.show', compact('user_detail'));
+        // order data
+        $orders = Order::where('user_id', $id)->get();
+        return response()->view('admin.users.show', compact('user_detail', 'orders'));
     }
 
     /**
